@@ -1,14 +1,20 @@
 language: python
-
 python:
-  - "3.6"
-  - "3.5"
-  - "3.4"
-  - "2.7"
-
+- '3.6'
+- '3.5'
+- '3.4'
+- '2.7'
 install:
-  - pip install -r requirements.txt
-  - pip install coveralls
-
+- pip install -r requirements.txt
+- pip install coveralls
 script:
-  - python manage.py cov
+- python manage.py cov
+deploy:
+  provider: heroku
+  api_key:
+    secure: cJxZulK9ZSWn8v3AUKnmBJBzIt1YUc/mEghcYhrjvyRWHdH7mo1MM1IPVt7qpuxcRRkAo+Dy/Gy5cjideUYmDidFEMwug6gh5iwHSitUtAyYMbZDxXApRZfwy2SS8VRcgnLvuE1jvyyPdvoYlUvt5b8pbYXRB1Uh91n0Z5Uk0d/dzy/Gc+U/ZQ7sxWJPBqm2Usd75rrHKfTY/CwsRG4Gj2Cm9IbUBdbbzxZFWnnhCFHaniAZaFsRD/CGCD3Q6jnv5wCzkr5ylQ+ksGmPtMtPLiagkS8HHuwnzED6TZTcxzNfn9GW04ceMp8RvFl+uNvWq0lLZ1aJeOpaQI7fzOgxfjdD495H0lOb76UDYyWB8Lqtq1J+/w0H/L9rdWDTbzjx4zRTytki9Oh6xSNjH5Yxt9qFyUFvkSrkGlAQ7X0kLjuP7uepsQdrs2qTTf5UqDG9wlRnbrPE4GI8i2Q8gN7Ed9rzHqHoCPY3utdQjrP9CNm2ujj8yzOr3hTqOaWsODexZPdo5UceB8kLA0Sanr1HVbZyTdA9axX6N9Iq0rM0+g2F8TzWBK7LkYvt3RIrkTyxyMSh4TeiOPojf90E3QtvJxV1NAOBk/b+DabWhMEPA70NOvQw3HQAoNieyb9AE+kkqXGzsQQDmRaAlwXA/iB+WlSi/bpMfhxszZjEii+DLro=
+  app: ancient-gorge-77230
+  on:
+    branch: 'master'
+    python: '3.6'
+    repo: rz1993/flask-skeleton
